@@ -44,7 +44,7 @@ function mostrarProductos(data) {
         if (element.url_image!=null&&element.url_image!=''){
             elementImg.src=element.url_image;
         }else {
-            elementImg.src="./assests/producto-sin-imagen.png"
+            elementImg.src="https://lorebsale.s3.amazonaws.com/frontend/assests/producto-sin-imagen.png"
         }
 
        
