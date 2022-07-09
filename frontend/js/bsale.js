@@ -1,19 +1,19 @@
 window.onload = function () {
-    fetch('http://localhost:8080/api/bsale/category')
+    fetch('http://3.80.136.152:8080/api/bsale/category')
         .then(response => response.json())
         .then(data => mostrarMenu(data));
-    fetch('http://localhost:8080/api/bsale/products')
+    fetch('http://3.80.136.152:8080/api/bsale/products')
         .then(response => response.json())
         .then(data => mostrarProductos(data));
 }
 
 function cargarProductos(category){
     if (category===0){
-        fetch('http://localhost:8080/api/bsale/products')
+        fetch('http://3.80.136.152:8080/api/bsale/products')
         .then(response => response.json())
         .then(data => mostrarProductos(data));
     }else{
-        fetch('http://localhost:8080/api/bsale/products/category/'+category)
+        fetch('http://3.80.136.152:8080/api/bsale/products/category/'+category)
         .then(response => response.json())
         .then(data => mostrarProductos(data));
     }
@@ -61,7 +61,7 @@ function mostrarProductos(data) {
 }
 
 function buscarporNombre() {
-    fetch('http://localhost:8080/api/bsale/products/name/'+document.getElementById('busqueda').value)
+    fetch('http://3.80.136.152:8080/api/bsale/products/name/'+document.getElementById('busqueda').value)
         .then(response => response.json())
         .then(data => mostrarProductos(data));
 }
