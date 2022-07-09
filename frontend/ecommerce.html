@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bsale Test</title>
+    <script src="js\bsale.js"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div>
+    <nav class="navbar navbar-light bg-white justify-content-center">
+    <h1 class="navbar-brand">Bsale Test</h1>
+  
+    <input type="text" id="busqueda" placeholder="Tienda" onkeypress="validarenter(event)" class="mt-0">
+    <button onclick="buscarporNombre()" class="button"><img height="20px" src="./assests/lupa.png"></button>
+    <img src="./assests/carrito-de-compras.png" height="20px">
+    
+</nav>
+</div>
+
+
+    <main class="productos">
+        <section class="box">
+            <ul id="ulMenu">
+                <li><a href="#" onclick="cargarProductos(0)" class="menu">Todos</a></li>
+            </ul>
+        </section>
+
+        <section class="container d-flex justify-content-center">
+            <div id="productos" class="d-flex justify-content-center row row-cols-4">
+            </div>
+        </section>
+
+        <template> 
+            <div id="contenedor" class="contenedor col">
+                <div>
+                    <img id="imagen" alt="imagen del producto" class="picture_product">
+                    <p id="nombre_producto"></p>
+                </div>
+                <hr>
+                <div class="detalle">
+                $<p id="precio_producto"></p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
+                </svg>
+                </div>
+            </div>
+        </template>
+    </main>
+    
+</body>
+</html>
