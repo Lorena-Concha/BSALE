@@ -47,7 +47,6 @@ function mostrarProductos(data) {
             elementImg.src="https://lorebsale.s3.amazonaws.com/frontend/assests/producto-sin-imagen.png"
         }
 
-       
 
         let elementName=temp.content.querySelector('#nombre_producto');
         elementName.textContent=element.name;
@@ -61,9 +60,16 @@ function mostrarProductos(data) {
 }
 
 function buscarporNombre() {
-    fetch('http://3.80.136.152:8080/api/bsale/products/name/'+document.getElementById('busqueda').value)
+    let texto=document.getElementById('busqueda').value;
+    if(texto==""){
+        fetch('http://3.80.136.152:8080/api/bsale/products')
         .then(response => response.json())
         .then(data => mostrarProductos(data));
+    } else {
+    fetch('http://3.80.136.152:8080/api/bsale/products/name/'+texto)
+        .then(response => response.json())
+        .then(data => mostrarProductos(data));
+    }
 }
 
 function validarenter(event) {
